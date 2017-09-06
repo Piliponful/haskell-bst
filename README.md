@@ -19,11 +19,11 @@ insert (Node l x r) v
       | v > x = Node l x (insert r v)
 ```
 **If you want to insert an element you have 3 options:**
-1. Node(first argument) you passed to `insert` is Nil - non-existant.
+1. Node(first argument) you passed to `insert` is `Nil` - non-existant.
 In that case you just create a new leaf node with a passed value(second argument).
 
 2. Node(first argument) have value associated with it greater or less then the one we trying to insert.
-In that case `insert`, for that list of arguments, evaluates to another call to insert. With first argument being one of the child nodes. Right child, if value you trying to insert is greater then current node one. Left if less then current node one. Recursion in all it's glory!
+In that case `insert`, for that set of arguments, evaluates to another call to insert. With first argument being one of the child nodes. Right child, if value you trying to insert is greater then current node one. Left if less then current node one. Recursion in all it's glory!
 
 3. If value you're trying to insert(second argument) equals to current node one - throw error. That's not allowed. There are other options. For example you can make values to be a list.
 More on that [here](https://stackoverflow.com/questions/300935/are-duplicate-keys-allowed-in-the-definition-of-binary-search-trees).
@@ -42,9 +42,9 @@ contains (Node l x r) v
       | v > x = contains r v
 ```
 **Here you also have 3 options**
-1. The node you provided as a function first argument is Nil. So you return False. It fits in the functional paradigm very well. You will get false if you provide Nil in your first call. As well as inner function calls with leaf node child as arguments, which is Nil.
+1. Node(first argument) you passed to `contains` is Nil. So you return False. It fits in the functional paradigm very well. You will get false if you provide `Nil` as root node in your outermost call. As well as inner function calls with leaf node child as arguments, which is Nil.
 
-2. The provided in arguments node value is greater or less then value we searching for(second arg). In that case the function call evaluates to another same function call with new set of arguments and evaluation continues until it hits leaf node or finds value.
+2. Value of node(first argument) you passed to `contains` is greater or less then value we searching for(second argument). In that case the function call evaluates to another same function call with new set of arguments and evaluation continues until it hits leaf node or finds value.
 
 3. The value is found. Return true.
 
