@@ -26,7 +26,7 @@ In that case you just create a new leaf node with a provided value.
 In that case the function `insert`, for that list of arguments, evaluates to another call to insert. With first argument being one of the child nodes. The right child if value you trying to insert is greater then current node one. And left if less then current node one... and that's recursion in all it's glory!
 
 3. If value you're trying to insert is equals to current node one then throw error. That's not allowed. There are other options. For example you can make values to be a list.
-More on that [here](https://stackoverflow.com/questions/300935/are-duplicate-keys-allowed-in-the-definition-of-binary-search-trees)
+More on that [here](https://stackoverflow.com/questions/300935/are-duplicate-keys-allowed-in-the-definition-of-binary-search-trees).
 
 
 ## Lookup
