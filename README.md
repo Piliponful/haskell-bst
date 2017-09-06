@@ -31,6 +31,7 @@ More on that [here](https://stackoverflow.com/questions/300935/are-duplicate-key
 
 ## Lookup
 other names: search/find/contains
+
 ```haskell
 contains :: Ord a => Tree a -> a -> Bool
 contains Nil _ = False
@@ -39,6 +40,31 @@ contains (Node l x r) v
       | v < x = contains l v
       | v > x = contains r v
 ```
-This is the simplest one. Mainly because you don't need to reconstruct the data structure.
+This is the simplest one. Mainly because you don't need to reconstruct the data structure from the ground up.
 **Here you also have 3 options**
-1. The node you provided as a function first argument is Nil. Then you return False. It fits in the functional paradigm very well. Because you will get false if you provide a
+1. The node you provided as a function first argument is Nil. So you return False. It fits in the functional paradigm very well. You will get false if you provide Nil in your first call. As well as inner function calls with leaf node child as arguments, which is Nil.
+
+2. The provided in arguments node value is greater or less then value we searching for(second arg). In that case the function call evaluates to another same function call with new set of arguments and evaluation continues until it hits leaf node or finds value.
+
+3. The value is found. Return true.
+
+
+## Delete
+
+```haskell
+delete :: Ord a => Tree a -> a -> Tree a
+delete Nil _ = Nil
+delete (Node l x r) v
+  | v < x = Node (delete l v) x r
+  | v > x = Node l x (delete r v)
+delete (Node Nil x Nil) v = Nil
+delete (Node Nil x   r) v = r
+delete (Node l   x Nil) v = l
+delete (Node l   x   r) v = Node l rv nr
+  where
+    (Node _ rv _) = rightmost r
+    nr = deleteRightest r
+```
+**Guess how much options you have?**
+1. The node is Nil so we return Nil. If you're not calling `delete` with Nil as a root node would mean that function evaluation come to leaf node and that would imply that there is no node with value we want deleted.
+2. 
