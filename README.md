@@ -30,7 +30,8 @@ More on that [here](https://stackoverflow.com/questions/300935/are-duplicate-key
 
 
 ## Lookup
-other names: search/find/contains
+*other names: search/find/contains*
+This is the simplest one. Mainly because you don't need to reconstruct the data structure from the ground up.
 
 ```haskell
 contains :: Ord a => Tree a -> a -> Bool
@@ -40,7 +41,6 @@ contains (Node l x r) v
       | v < x = contains l v
       | v > x = contains r v
 ```
-This is the simplest one. Mainly because you don't need to reconstruct the data structure from the ground up.
 **Here you also have 3 options**
 1. The node you provided as a function first argument is Nil. So you return False. It fits in the functional paradigm very well. You will get false if you provide Nil in your first call. As well as inner function calls with leaf node child as arguments, which is Nil.
 
