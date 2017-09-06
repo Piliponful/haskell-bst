@@ -27,6 +27,7 @@ In that case the function `insert`, for that list of arguments, evaluates to ano
 
 3. If value you're trying to insert is equals to current node one then throw error. That's not allowed. There are other options. For example you can make values to be a list.
 More on that in:
+
 https://stackoverflow.com/questions/300935/are-duplicate-keys-allowed-in-the-definition-of-binary-search-trees
 
 
