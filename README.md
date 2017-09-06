@@ -1,5 +1,4 @@
 # Learning binary trees haskell
-the language that doesn't make me wanaa break keyboard or puke... language for the code in which, you can actually be proud. When the day comes when we all just start writing our software in haskell? What about Moore law, isn't it dead? When our processors will have 500 cores and we will lought at "procedural" programming? It actually doesn't have to be haskell. I just don't understand why the fuck goto statement in a stack-based languages is called function. I don't understand why I have to use pointers in the node type definition. I don't understand why generics...
 ---
 
 Who would write readme if not me:deciduous_tree:?
