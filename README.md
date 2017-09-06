@@ -19,13 +19,13 @@ insert (Node l x r) v
       | v > x = Node l x (insert r v)
 ```
 **If you want to insert an element you have 3 options:**
-1. The node you provided to the function is Nil - non-existant.
-In that case you just create a new leaf node with a provided value.
+1. Node(first argument) you passed to `insert` is Nil - non-existant.
+In that case you just create a new leaf node with a passed value(second argument).
 
-2. The node you provided as a function first argument have value associated with it greater or less then the one we trying to insert.
-In that case the function `insert`, for that list of arguments, evaluates to another call to insert. With first argument being one of the child nodes. The right child if value you trying to insert is greater then current node one. And left if less then current node one... and that's recursion in all it's glory!
+2. Node(first argument) have value associated with it greater or less then the one we trying to insert.
+In that case `insert`, for that list of arguments, evaluates to another call to insert. With first argument being one of the child nodes. Right child, if value you trying to insert is greater then current node one. Left if less then current node one. Recursion in all it's glory!
 
-3. If value you're trying to insert is equals to current node one then throw error. That's not allowed. There are other options. For example you can make values to be a list.
+3. If value you're trying to insert(second argument) equals to current node one - throw error. That's not allowed. There are other options. For example you can make values to be a list.
 More on that [here](https://stackoverflow.com/questions/300935/are-duplicate-keys-allowed-in-the-definition-of-binary-search-trees).
 
 
